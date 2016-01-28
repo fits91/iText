@@ -1,7 +1,7 @@
 package ua.com.fits;
 
 import com.itextpdf.text.DocumentException;
-import ua.com.fits.service.Service;
+import ua.com.fits.service.ItextService;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -12,7 +12,7 @@ import java.io.IOException;
 public class Itext {
     public static void main(String[] args) {
         try {
-            new Service().createPDF("img.jpg");
+            new ItextService().createPDF("imgpng.png");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (DocumentException e) {
