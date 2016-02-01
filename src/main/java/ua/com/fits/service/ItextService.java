@@ -2,7 +2,6 @@ package ua.com.fits.service;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 
@@ -28,13 +27,14 @@ public class ItextService {
         if(!imagePath.isEmpty()) {
             BufferedImage originalImage = ImageIO.read(new File(imagePath));
             System.out.println(originalImage.getHeight() + " " + originalImage.getWidth());
+
             int type = originalImage.getType() == 0? BufferedImage.TYPE_INT_ARGB : originalImage.getType();
 
-            BufferedImage resizeImage = ImageService.resizeImage(originalImage, type);
+//            BufferedImage resizeImage = ImageService.resizeImage(originalImage, type);
 
-            Image image = Image.getInstance(ImageService.getBytesFromBufferedImage(resizeImage));
+//            Image image = Image.getInstance(ImageService.getBytesFromBufferedImage(resizeImage));
 
-            document.add(image);
+//            document.add(image);
         }
 
         document.close();
